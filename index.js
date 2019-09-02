@@ -26,6 +26,7 @@ function draw() {
             const width = Rect[1] - Rect[0];
             const height = 1;
             translate(Rect[0] + width / 2 - resX * string.length / 2, y + height - rows.length - 5);
+            strokeWeight(0);
             box(width, height, 100);
             pop();
         }
@@ -33,8 +34,10 @@ function draw() {
     if (rows.length - ((frameCount - 1) % rows.length) - 1 === 0) {
         noLoop();
         setTimeout(() => {
-            string = nextString;
-            rows = calculateRects(string);
+            if (string !== nextString) {
+                string = nextString;
+                rows = calculateRects(string);
+            }
             loop();
         }, 2500);
     }
