@@ -80,6 +80,7 @@ function calculateRects(string, width) {
     graphic.background(255);
     graphic.text(string, graphic.width / 2, graphic.height / 2);
     graphic.loadPixels();
+    let rows = [];
     for (let y = 0; y < graphic.height; y++) {
         let inRect = false;
         let rectStart = 0;
