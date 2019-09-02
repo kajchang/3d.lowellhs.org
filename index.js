@@ -1,11 +1,11 @@
-let ProductSans;
+let NotoSans;
 const resX = 500;
 let start = 0;
 let string = nextString = 'Lowell';
 let rows = [];
 
 function preload() {
-    ProductSans = loadFont('/ProductSans-Regular.ttf');
+    NotoSans = loadFont('/NotoSans-Regular.ttf');
 }
 
 function setup() {
@@ -27,7 +27,7 @@ function draw() {
             fill(200, 50, 50);
             const width = Rect[1] - Rect[0];
             const height = 1;
-            translate(Rect[0] + width / 2 - 500 / 2, y + height - rows.length - 10);
+            translate(Rect[0] + width / 2 - resX / 2, y + height - rows.length - 10);
             strokeWeight(0);
             box(width, height, 100);
             pop();
@@ -71,10 +71,10 @@ function calculateRects(string, width) {
     if (string === '') {
         return [[]];
     }
-    const textSize = Math.floor(findTextSize(string, ProductSans, width));
+    const textSize = Math.floor(findTextSize(string, NotoSans, width));
     const graphic = createGraphics(500, textSize * 2);
     graphic.textAlign('center', 'center');
-    graphic.textFont(ProductSans);
+    graphic.textFont(NotoSans);
     graphic.textStyle(NORMAL);
     graphic.textSize(textSize);
     graphic.background(255);
@@ -111,7 +111,7 @@ function calculateRects(string, width) {
 
 document.addEventListener('DOMContentLoaded', () => {
     string = nextString = document.getElementById('what-to-print').value;
-    document.getElementById('what-to-print').addEventListener('keyup', e => {
+    document.getElementById('what-to-print').addEventListener('change', e => {
         nextString = e.target.value;
     });
 });

@@ -1,11 +1,11 @@
 @font-face {
-    font-family: Product Sans sans-serif;
-    src: url('/ProductSans-Regular.ttf') format('truetype');
+    font-family: Noto Sans sans-serif;
+    src: url('/NotoSans-Regular.ttf') format('truetype');
 }
 
 body {
     margin: 0;
-    font-family: Product Sans sans-serif;
+    font-family: Noto Sans sans-serif;
 }
 
 .in-text {
