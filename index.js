@@ -11,9 +11,6 @@ function preload() {
 function setup() {
     const canvas = createCanvas(windowWidth, 500, WEBGL);
     canvas.parent(document.querySelector('.canvas-container'));
-    canvas.style('display', 'block');
-    canvas.style('margin', 'auto');
-    frameRate(10);
     angleMode(DEGREES);
     rows = calculateRects(string, resX);
 }
